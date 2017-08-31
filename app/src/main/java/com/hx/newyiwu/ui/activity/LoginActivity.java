@@ -36,6 +36,8 @@ public class LoginActivity extends AppCompatActivity  implements CommonContract.
     EditText mTel;
     @BindView(R.id.password)
     EditText mPassword;
+    @BindView(R.id.delete_password)
+    TextView mDeletePassword;
     @BindView(R.id.login)
     Button mLogin;
     @BindView(R.id.forget_password)
@@ -52,7 +54,7 @@ public class LoginActivity extends AppCompatActivity  implements CommonContract.
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.login,R.id.forget_password,R.id.user_register,R.id.login_service,R.id.tel})
+    @OnClick({R.id.login,R.id.delete_password,R.id.forget_password,R.id.user_register,R.id.login_service,R.id.tel,R.id.password})
     public void onClick(View view){
         switch (view.getId()){
             case R.id.login://登录按钮
@@ -64,6 +66,11 @@ public class LoginActivity extends AppCompatActivity  implements CommonContract.
                 }else {
                     Toast.makeText(this, "密码或者用户名不能为空", Toast.LENGTH_SHORT).show();
                 }
+                break;
+
+            case R.id.delete_password:
+                mPassword.setText("");
+                mDeletePassword.setVisibility(View.GONE);
                 break;
 
             case R.id.forget_password://忘记密码
@@ -89,6 +96,7 @@ public class LoginActivity extends AppCompatActivity  implements CommonContract.
                     @Override
                     public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                         mPassword.setText("");//删除账号，密码设置为空
+                        mDeletePassword.setVisibility(View.GONE);
                     }
 
                     @Override
@@ -96,6 +104,26 @@ public class LoginActivity extends AppCompatActivity  implements CommonContract.
 
                     }
                 });
+                break;
+            case R.id.password:
+               mPassword.addTextChangedListener(new TextWatcher() {
+                   @Override
+                   public void beforeTextChanged(CharSequence charSequence, int start, int before, int count) {
+
+                   }
+
+                   @Override
+                   public void onTextChanged(CharSequence charSequence, int start, int count, int after) {
+                        Log.i(TAG,"在变化");
+                        mDeletePassword.setVisibility(View.VISIBLE);
+                   }
+
+                   @Override
+                   public void afterTextChanged(Editable editable) {
+
+                   }
+               });
+
                 break;
             default:
                 break;

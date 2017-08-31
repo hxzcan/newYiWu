@@ -8,7 +8,7 @@
     >
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
@@ -17,7 +17,7 @@
 
         <EditText
             android:id="@+id/tel"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="center"
             android:hint="请输入电话"
@@ -28,23 +28,38 @@
             android:theme="@style/my_editText_style"
             />
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:hint="请输入密码"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:inputType="textPassword"
-            android:textCursorDrawable="@drawable/edittext_cursor"
-            android:theme="@style/my_editText_style"
-            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:hint="请输入密码"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:inputType="textPassword"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:theme="@style/my_editText_style"
+                />
+            <TextView
+                android:id="@+id/delete_password"
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:text="×"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:visibility="invisible"
+                />
+        </RelativeLayout>
 
         <Button
             android:id="@+id/login"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:textColor="@color/white"
             android:textSize="15sp"
@@ -52,7 +67,7 @@
             android:text="登录"
             />
         <RelativeLayout
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             >
             <TextView
