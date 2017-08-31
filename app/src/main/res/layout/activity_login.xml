@@ -23,6 +23,9 @@
             android:hint="请输入电话"
             android:textColor="@color/white"
             android:textSize="15sp"
+            android:inputType="phone"
+            android:textCursorDrawable="@drawable/edittext_cursor"
+            android:theme="@style/my_editText_style"
             />
 
         <EditText
@@ -34,6 +37,8 @@
             android:textColor="@color/white"
             android:textSize="15sp"
             android:inputType="textPassword"
+            android:textCursorDrawable="@drawable/edittext_cursor"
+            android:theme="@style/my_editText_style"
             />
 
         <Button

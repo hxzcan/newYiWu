@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--自定义EditText的光标的颜色和大小-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <size android:width="2dp"/>
+    <solid android:color="@color/login_button"/>
+</shape>
